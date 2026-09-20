@@ -1,160 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brilly Arfendo Gautama - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        
-        header {
-            background: #2c3e50;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e8491d 3px solid;
-        }
-        
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        
-        header h1, header p {
-            text-align: center;
-        }
-        
-        section {
-            padding: 20px 0;
-        }
-        
-        section h2 {
-            font-size: 2em;
-            color: #35424a;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        section ul {
-            list-style-type: none;
-        }
-        
-        section li {
-            background: #fff;
-            margin: 10px 0;
-            padding: 20px;
-            border: #ddd 1px solid;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Brilly Arfendo Gautama</h1>
-            <p>Purworejo, 13 December 1997 | Phone: +6281110003656 | Email: brillyarfendogautama@gmail.com</p>
-        </div>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts.js" defer></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="home">
+      <div class="container">
+        <h1>Brilly Arfendo Gautama</h1>
+        <p>Internal Auditor & Programmer</p>
+        <a href="#about">Lihat Selengkapnya</a>
+      </div>
     </header>
 
+    <!-- About -->
     <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I have been working as Internal Auditor in Badan Narkotika Nasional (BNN) for 4 years. Graduated from Gunadarma University Bachelor of Information Technology and experienced to worked for Telkomsel about 2 years as Programmer of Customer Care Performance Analytics (full stack developer and application maintenance). Certified in performance auditing, financial auditing, ISO compliance, and IT auditing.</p>
+      <div class="container">
+        <h2>Tentang Saya</h2>
+        <p>
+          Saya adalah seorang Internal Auditor di Badan Narkotika Nasional (BNN)
+          dan memiliki pengalaman sebagai Programmer Customer Care Performance
+          Analytics di Telkomsel. Saya ahli dalam bidang cybersecurity, forensik
+          digital, pemrograman, teknologi cloud, dan manajemen basis data.
+        </p>
+        <div class="contact-info">
+          <p><strong>DoB:</strong> Purworejo, 13 Desember 1997</p>
+          <p><strong>Email:</strong> brillyarfendogautama@gmail.com</p>
+          <p><strong>Telpon:</strong> 081110003656</p>
+          <p>
+            <strong>Alamat:</strong> Sawangan Village Cluster Bukit Petro -
+            Depok, Indonesia
+          </p>
         </div>
+      </div>
     </section>
 
+    <!-- Education -->
     <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <ul>
-                <li><strong>Bachelor of Information Technology (GPA: 3.58)</strong>, Gunadarma University | 2015 - 2019<br>Concentration: Programming and Network</li>
-            </ul>
-        </div>
+      <div class="container">
+        <h2>Pendidikan</h2>
+        <ul>
+          <li>
+            <strong>Gunadarma University</strong> - Bachelor of Information
+            Technology (GPA: 3.58)
+          </li>
+          <li>Konsentrasi: Programming and Network</li>
+          <li>Tahun: 2015 - 2019</li>
+        </ul>
+      </div>
     </section>
 
+    <!-- Experience -->
     <section id="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <ul>
-                <li><strong>Internal Auditor Ahli Pertama, Inspektorat Utama, BNN Pusat (PNS)</strong>, Badan Narkotika Nasional | 2022 - Present</li>
-                <li><strong>Programmer, Customer Care Performance Analytics</strong>, PT Telekomunikasi Selular (Telkomsel Headquarters) | 2020 – 2022</li>
-                <li><strong>Assistant Laboratory, Advanced Computer System Laboratory</strong>, Gunadarma University | 2018 – 2019</li>
-            </ul>
-        </div>
+      <div class="container">
+        <h2>Pengalaman Kerja</h2>
+        <ul>
+          <li>
+            <strong
+              >Internal Auditor Ahli Pertama, Inspektorat Utama, BNN
+              Pusat</strong
+            >
+            <p>Status: Pegawai Negeri Sipil (PNS)</p>
+            <p>Tahun: 2022 – Sekarang</p>
+          </li>
+          <li>
+            <strong
+              >Programmer, Customer Care Performance Analytics, PT
+              Telekomunikasi Selular (Telkomsel Headquarters)</strong
+            >
+            <p>Status: Kontrak Penuh Waktu (PKWT)</p>
+            <p>Tahun: 2020 – 2022</p>
+          </li>
+          <li>
+            <strong
+              >Assistant Laboratory, Advanced Computer System Laboratory,
+              Gunadarma University</strong
+            >
+            <p>Status: Part Time</p>
+            <p>Tahun: 2018 – 2019</p>
+          </li>
+        </ul>
+      </div>
     </section>
 
+    <!-- Skills -->
     <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul>
-                <li>Cybersecurity: SIEM (Wazuh, Splunk), Incident Response, Vulnerability Assessment, Malware Analysis, Threat Intelligence, Wireshark</li>
-                <li>Forensic Tools: FTK Imager, Volatility 3, Hex Editors, CAINE, Autopsy, Chain of Custody (CoC)</li>
-                <li>Programming/Scripting: PHP, CodeIgniter, JQuery, Python (Data Analysis, Scripting)</li>
-                <li>Cloud Technologies: Kaggle (Machine Learning Data Storage and Execution), Knowledge of AWS (Amazon Web Services) and Azure</li>
-                <li>Security Frameworks & Compliance: ISO 27001, COBIT, Knowledge of ITIL, NIST Cybersecurity Framework.</li>
-                <li>Databases: Oracle Database, MySQL, Hadoop</li>
-                <li>Others: Balsamiq, Tableau, UIPath, N8N, Docker, Microsoft Office, GitHub</li>
-            </ul>
-        </div>
+      <div class="container">
+        <h2>Keterampilan</h2>
+        <h3>Cybersecurity:</h3>
+        <p>
+          SIEM (Wazuh, Splunk), Incident Response, Vulnerability Assessment,
+          Malware Analysis, Threat Intelligence, Wireshark
+        </p>
+        <h3>Forensic Tools:</h3>
+        <p>
+          FTK Imager, Volatility 3, Hex Editors, CAINE, Autopsy, Chain of
+          Custody (CoC)
+        </p>
+        <h3>Programming/Scripting:</h3>
+        <p>PHP, CodeIgniter, JQuery, Python (Data Analysis, Scripting)</p>
+        <h3>Cloud Technologies:</h3>
+        <p>
+          Kaggle (Machine Learning Data Storage and Execution), Knowledge of AWS
+          (Amazon Web Services) and Azure
+        </p>
+        <h3>Security Frameworks & Compliance:</h3>
+        <p>
+          ISO 27001, COBIT, Knowledge of ITIL, NIST Cybersecurity Framework.
+        </p>
+        <h3>Databases:</h3>
+        <p>Oracle Database, MySQL, Hadoop</p>
+        <h3>Lainnya:</h3>
+        <p>Balsamiq, Tableau, UIPath, N8N, Docker, Microsoft Office, GitHub</p>
+      </div>
     </section>
 
-    <section id="training">
-        <div class="container">
-            <h2>Training & Certifications</h2>
-            <ul>
-                <li>PEN-103: Kali Linux Revealed, Offensive Security | 2026</li>
-                <li>Cybersecurity Foundation Training, ID-Networkers | 2026</li>
-                <li>IT Auditor, Badan Pengawasan Keuangan dan Pembangunan | 2024</li>
-                <li>Robot Process Automation, Kominfo & Train4best | 2023</li>
-                <li>Pendidikan dan Pelatihan Auditor Ahli Pertama, Badan Pengawasan Keuangan dan Pembangunan | 2023</li>
-                <li>Intermediate Windows Server 2008 Administrator, Lembaga Pengembangan Komputer, Gunadarma | 2018</li>
-                <li>Introduction to Oracle Report Developer, Lembaga Pengembangan Komputer, Gunadarma University | 2018</li>
-            </ul>
-        </div>
+    <!-- Training & Certifications -->
+    <section id="certifications">
+      <div class="container">
+        <h2>Pelatihan & Sertifikasi</h2>
+        <ul>
+          <li>PEN-103: Kali Linux Revealed, Offensive Security | 2026</li>
+          <li>Cybersecurity Foundation Training, ID-Networkers | 2026</li>
+          <li>IT Auditor, Badan Pengawasan Keuangan dan Pembangunan | 2024</li>
+          <li>Robot Process Automation, Kominfo & Train4best | 2023</li>
+          <li>
+            Pendidikan dan Pelatihan Auditor Ahli Pertama, Badan Pengawasan
+            Keuangan dan Pembangunan | 2023
+          </li>
+          <li>
+            Intermediate Windows Server 2008 Administrator, Lembaga Pengembangan
+            Komputer, Gunadarma | 2018
+          </li>
+          <li>
+            Introduction to Oracle Report Developer, Lembaga Pengembangan
+            Komputer, Gunadarma University | 2018
+          </li>
+        </ul>
+      </div>
     </section>
 
+    <!-- Portfolio -->
     <section id="portfolio">
-        <div class="container">
-            <h2>Portfolio</h2>
-            <ul>
-                <li><strong>Audit Keamanan IT, as Auditor | BNN 2024</strong></li>
-                <li><strong>Audit Internal Satuan Kerja Wilayah & Pusat, as Auditor | BNN 2022 - Present</strong></li>
-                <li><strong>Manajemen Risiko, as Evaluator | BNN 2022 - Present</strong></li>
-                <li><strong>Sistem Akuntabilitas Kinerja Instansi Pemerintah, as Ketua Tim | BNN 2022 - Present</strong></li>
-                <li><strong>RAISA Reporting & Analysis Integrated System for Area, as Developer | Telkomsel 2020-2022</strong></li>
-                <li><strong>Merdeka Belajar Jarak Jauh (MBJJ) Data System, as Developer | Telkomsel 2020-2022</strong></li>
-                <li><strong>Business Solution Analysis & Data Strategy, as Technical Liaison | Telkomsel 2020-2022</strong></li>
-                <li><strong>Private LLM Infrastructure & Secure Inference, as Software Engineer | Independent Project 2026</strong></li>
-                <li><strong>Web Pendaftaran & Informasi Ekskul SMA Widuri, as Developer | Gunadarma University 2018-2019</strong></li>
-            </ul>
-        </div>
+      <div class="container">
+        <h2>Portfolio</h2>
+        <h3>Internal Audit</h3>
+        <ul>
+          <li>Audit Keamanan IT, as Auditor | BNN 2024</li>
+          <li>
+            Audit Internal Satuan Kerja Wilayah & Pusat, as Auditor | BNN 2022 -
+            Sekarang
+          </li>
+          <li>Manajemen Risiko, as Evaluator | BNN 2022 - Sekarang</li>
+          <li>
+            Sistem Akuntabilitas Kinerja Instansi Pemerintah, as Ketua Tim | BNN
+            2022 - Sekarang
+          </li>
+        </ul>
+        <h3>Software Development & Business Analysis</h3>
+        <ul>
+          <li>
+            RAISA Reporting & Analysis Integrated System for Area, as Developer
+            | Telkomsel 2020-2022
+          </li>
+          <li>
+            Merdeka Belajar Jarak Jauh (MBJJ) Data System, as Developer |
+            Telkomsel 2020-2022
+          </li>
+          <li>
+            Business Solution Analysis & Data Strategy, as Technical Liaison |
+            Telkomsel 2020-2022
+          </li>
+        </ul>
+        <h3>Pengembangan Web & Solusi Teknis</h3>
+        <ul>
+          <li>
+            Web Pendaftaran & Informasi Ekskul SMA Widuri, as Developer |
+            Gunadarma University 2018-2019
+          </li>
+          <li>
+            CCIS Customer Care Information System Configuration as Programmer |
+            Telkomsel 2020-2022
+          </li>
+          <li>
+            e-Paperless PSB Halo Registration Form, as Programmer | Telkomsel
+            2020
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-    $(document).ready(function(){
-       // You can add jQuery functionality here if needed.
-       // Example: Smooth scrolling for anchor links
-       $('a[href*="#"]').on('click', function(e) {
-           e.preventDefault();       
-            var target = $(this.hash);
-            $('html, body').animate({
-                scrollTop: target.offset().top
-            }, 800); // The number here represents the speed of the scroll in milliseconds.
-        });
-    });
-    </script>
-</body>
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>Kontak</h2>
+        <p>Email: brillyarfendogautama@gmail.com</p>
+        <p>Telpon: 081110003656</p>
+        <p>Alamat: Sawangan Village Cluster Bukit Petro - Depok, Indonesia</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2023 Brilly Arfendo Gautama. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>
