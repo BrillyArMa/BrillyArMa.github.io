@@ -106,4 +106,16 @@ footer {
   .container {
     width: 95%;
   }
+
+  .logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      /* Rounded corners for the logo */
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
 }
