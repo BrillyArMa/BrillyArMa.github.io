@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAISA - TELKOMSEL</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Konfigurasi warna kustom jika diperlukan, tapi kita akan fokus pada utility classes */
+        body {
+            font-family: 'Inter', sans-serif; /* Menggunakan font modern default */
+        }
+    </style>
+</head>
+
+<!-- Body menggunakan latar belakang gelap (hitam/abu-abu sangat tua) -->
+<body class="bg-gray-900 text-white min-h-screen">
+
+    <!-- 1. NAVIGATION BAR / HEADER -->
+    <header class="sticky top-0 z-50 bg-gray-800 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Nama Proyek -->
+            <h1 class="text-2xl font-bold text-blue-400 tracking-wider">AI Chatbot Project</h1>
+            
+            <!-- Link Profil GitHub -->
+            <a href="https://brillyarma.github.io/" target="_blank" 
+               class="px-4 py-2 bg-gray-700 hover:bg-blue-600 transition duration-300 rounded-lg text-sm font-medium flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.82-.258.82-.577 0-.285-.01-1.043-.015-2.05-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.748-1.333-1.748-1.09-.745.083-.73.083-.73 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.304.762-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.291-1.552 3.301-1.23 3.301-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .319.214.694.826.576C20.565 21.797 24 17.297 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub Profile
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- 2. HERO SECTION (The Pitch) -->
+        <section class="text-center mb-16 p-8 bg-gray-800 rounded-xl shadow-2xl border-t-4 border-blue-500">
+            <h2 class="text-5xl font-extrabold mb-4 leading-tight text-white">
+                AI Whatsapp Chat Bot <span class="text-blue-400">Cendana Music Studio</span>
+            </h2>
+            <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto">
+                Menciptakan solusi *booking* musik yang cerdas dan responsif, mengotomatisasi proses bisnis untuk efisiensi maksimal.
+            </p>
+        </section>
+
+        <!-- 3. PROJECT OVERVIEW & ROLE -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            
+            <!-- Kolom Kiri: Deskripsi Proyek -->
+            <div class="lg:col-span-2 bg-gray-800 p-8 rounded-xl shadow-xl">
+                <h3 class="text-3xl font-semibold text-blue-400 mb-4 border-b pb-2 border-gray-700">📖 Project Overview</h3>
+                <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                    Proyek ini bertujuan untuk mengatasi inefisiensi dan keterlambatan dalam proses *booking* musik di Cendana Music Studio. Dengan mengimplementasikan AI Chatbot berbasis WhatsApp, kami berhasil menciptakan sistem yang tidak hanya cerdas tetapi juga sangat responsif terhadap kebutuhan klien.
+                </p>
+
+                <!-- Dampak Bisnis (Impact) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="bg-gray-700 p-5 rounded-lg text-center border-l-4 border-green-500">
+                        <p class="text-4xl font-bold text-green-400">Rp120.000/bulan</p>
+                        <p class="text-sm mt-1 text-gray-300">Biaya operasional yang berhasil dihemat.</p>
+                    </div>
+                    <div class="bg-gray-700 p-5 rounded-lg text-center border-l-4 border-blue-500">
+                        <p class="text-4xl font-bold text-blue-400">87%</p>
+                        <p class="text-sm mt-1 text-gray-300">Peningkatan efisiensi proses *booking*.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Kolom Kanan: Role & Tech Stack -->
+            <div class="lg:col-span-1 space-y-8">
+                
+                <!-- Role Card -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-t-4 border-blue-500">
+                    <h3 class="text-2xl font-semibold text-white mb-3">👤 My Role</h3>
+                    <p class="text-lg text-gray-300">Software Engineer | Independent Project (2026)</p>
+                </div>
+
+                <!-- Tech Stack Card -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-xl">
+                    <h3 class="text-2xl font-semibold text-white mb-4">🛠️ Technology Stack</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <!-- Tech Badges -->
+                        <span class="px-4 py-1 bg-blue-600 text-white rounded-full text-sm font-medium shadow-md hover:bg-blue-700 transition duration-200">N8N</span>
+                        <span class="px-4 py-1 bg-gray-700 text-white rounded-full text-sm font-medium border border-gray-600">Redis</span>
+                        <span class="px-4 py-1 bg-gray-700 text-white rounded-full text-sm font-medium border border-gray-600">PostgreSQL</span>
+                        <span class="px-4 py-1 bg-blue-600 text-white rounded-full text-sm font-medium shadow-md hover:bg-blue-700 transition duration-200">Google API</span>
+                        <span class="px-4 py-1 bg-gray-700 text-white rounded-full text-sm font-medium border border-gray-600">Private Inference Servers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. CALL TO ACTION / EVIDENCE LINKS -->
+        <section class="text-center mt-20 p-10 bg-gray-800 rounded-xl shadow-2xl border-t-4 border-blue-500">
+            <h3 class="text-4xl font-bold mb-6 text-white">Ready to Dive Deeper?</h3>
+            <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                Lihat kode sumber, dokumentasi teknis (ERD, Flowchart), dan bukti hasil proyek di tautan berikut.
+            </p>
+
+            <!-- Link Codebase (GitHub) -->
+            <a href="#" target="_blank" 
+               class="inline-block px-10 py-4 mb-4 text-lg font-semibold rounded-full bg-blue-600 hover:bg-blue-700 transition duration-300 shadow-lg transform hover:scale-105">
+                🔗 View Codebase (GitHub)
+            </a>
+
+            <!-- Link Documentation (Google Drive/Notion) -->
+             <a href="#" target="_blank" 
+               class="inline-block px-10 py-4 text-lg font-semibold rounded-full bg-gray-700 hover:bg-blue-600 transition duration-300 shadow-lg transform hover:scale-105">
+                📂 View Documentation & Evidence (Drive/Notion)
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 mt-12 border-t border-gray-700 text-gray-500">
+        &copy; 2024 Brilly Arma. All rights reserved. | Built with Tailwind CSS.
+    </footer>
+
+</body>
+</html>
