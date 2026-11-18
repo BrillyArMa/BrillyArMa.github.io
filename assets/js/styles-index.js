@@ -121,7 +121,7 @@ $(function () {
       function setLang(lang) {
         $.each(T, (_, [$e, id]) => $e.each(function () {
           const $el = $(this);
-          if ($el.data("en") === undefined) $el.data("en", $el.html()); // first time save teks in Inggris
+          if ($el.data("en") === undefined) $el.data("en", $el.html()); // first time save text in English
           const en = $el.data("en");
           $el.html(lang === "id" ? (typeof id === "function" ? id(en) : id) : en);
         }));
