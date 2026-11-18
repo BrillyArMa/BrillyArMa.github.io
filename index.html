@@ -57,7 +57,6 @@
       height: 100%;
       /* Image takes full height of its parent container */
       object-fit: contain;
-      /* CRITICAL: Ensures the image scales down to fit without being cropped */
     }
 
     /* Custom styling to mimic the clean, modern feel */
@@ -65,44 +64,92 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
+
+    /* Custom navbar with CSS */
+    #nav-toggle {
+      display: none;
+    }
+
+    #nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: #000;
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #1f2937;
+    }
+
+    #nav-menu.open {
+      display: block;
+    }
+
+    #nav-menu li+li {
+      margin-top: .5rem;
+    }
+
+    #nav-menu a {
+      display: block;
+      padding: .25rem 0;
+      color: #fff;
+    }
+
+    #nav-menu a:hover {
+      color: #818cf8;
+    }
+
+    @media (max-width: 1023px) {
+      #nav-toggle {
+        display: block;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      #nav-menu {
+        display: flex;
+        position: static;
+        width: auto;
+        background: transparent;
+        padding: 0;
+        border: 0;
+      }
+
+      #nav-menu li+li {
+        margin: 0 0 0 2rem;
+      }
+    }
   </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 antialiased">
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 w-full bg-black shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-xl font-bold text-white code-tag"><span
-          class="inline-block align-top">&lt;</span>BRILLY<span class="inline-block align-top">/&gt;</span>
-      </a>
-      <ul class="flex space-x-8">
-        <li>
-          <a href="#hero" class="hover:text-indigo-600 text-white">Home</a>
-        </li>
-        <li>
-          <a href="#about" class="hover:text-indigo-600 text-white">About Me</a>
-        </li>
-        <li>
-          <a href="#projects" class="hover:text-indigo-600 text-white">Project</a>
-        </li>
-        <li>
-          <a href="#experience" class="hover:text-indigo-600 text-white">Experience</a>
-        </li>
-        <li>
-          <a href="#skills" class="hover:text-indigo-600 text-white">Skills</a>
-        </li>
-        <li>
-          <a href="#certifications" class="hover:text-indigo-600 text-white">Certifications</a>
-        </li>
-        <li>
-          <a href="#contact" class="hover:text-indigo-600 text-white">Contact</a>
-        </li>
-      </ul>
+  <nav id="site-nav" class="fixed top-0 left-0 w-full bg-black shadow-md z-50">
+    <div class="container mx-auto px-6 h-16 flex items-center justify-between gap-3">
+      <a href="#" class="shrink-0 whitespace-nowrap text-xl font-bold text-white code-tag"><span
+          class="inline-block align-top">&lt;</span>BRILLY<span class="inline-block align-top">/&gt;</span></a>
+      <div class="flex items-center gap-3">
+        <ul id="nav-menu">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Project</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="flex rounded overflow-hidden border border-gray-600 text-sm" role="group" aria-label="Language">
+          <button type="button" class="lang-btn px-3 py-1 text-white" data-lang="en">EN</button>
+          <button type="button" class="lang-btn px-3 py-1 text-white" data-lang="id">ID</button>
+        </div>
+        <button id="nav-toggle" type="button" class="p-2 text-white" aria-label="Menu" aria-controls="nav-menu"
+          aria-expanded="false"><i class="fas fa-bars text-xl"></i></button>
+      </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="relative h-screen flex items-center justify-center bg-cover bg-center"
+  <section id="hero" class="relative min-h-screen pt-16 flex items-center justify-center bg-cover bg-center"
     style="background-image: url(&quot;assets/img/obsidian-graph.gif&quot;)">
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
     <div class="container mx-auto px-6 text-center relative z-10">
@@ -118,8 +165,8 @@
           class="px-6 py-3 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-100 transition">Project
           Overview</a>
         <a href="#contact"
-          class="px-6 py-3 border-2 border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-600 hover:text-white transition">Hubungi
-          Saya</a>
+          class="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition">Contact
+          Me</a>
       </div>
     </div>
   </section>
@@ -133,7 +180,7 @@
         Security, Software Development and Business Implementation. During my
         tenure at <b>Telkomsel (2020–2022)</b>, I architected vital systems
         from analytical reporting platforms to complex data management
-        solutions proving my ability to trangray intricate business needs into
+        solutions proving my ability to transform intricate business needs into
         scalable, functional code. This development expertise was profoundly
         deepened by my four years as an <b>Internal Auditor at BNN</b>, where
         I gained deep insight into risk governance and systematic
@@ -178,7 +225,7 @@
               <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Private Inference
                 Servers</span>
             </div>
-            <a href="https://brillyarma.github.io/underconstruct.html" class="text-blue-600 hover:underline">Detail Project</a>
+            <a href="project.html?id=whatsapp-bot-cendana" class="text-blue-600 hover:underline">Detail Project</a>
           </div>
         </div>
 
@@ -202,7 +249,8 @@
               <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">VPN</span>
               <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">LM Studio</span>
             </div>
-            <a href="https://brillyarma.github.io/underconstruct.html" class="text-blue-600 hover:underline">Detail Project</a>
+            <a href="project.html?id=private-llm" class="text-blue-600 hover:underline">Detail
+              Project</a>
           </div>
         </div>
 
@@ -227,7 +275,8 @@
               <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Tableau</span>
               <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Business Analyst (B.A.)</span>
             </div>
-            <a href="https://brillyarma.github.io/underconstruct.html" class="text-blue-600 hover:underline">Detail Project</a>
+            <a href="project.html?id=business-solution-analysis" class="text-blue-600 hover:underline">Detail
+              Project</a>
           </div>
         </div>
 
@@ -252,9 +301,10 @@
               <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Digital Transformation</span>
               <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Telecommunication
                 Services</span>
-              <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Internet Gratis</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Free Internet</span>
             </div>
-            <a href="https://brillyarma.github.io/underconstruct.html" class="text-blue-600 hover:underline">Detail Project</a>
+            <a href="project.html?id=mbjj" class="text-blue-600 hover:underline">Detail
+              Project</a>
           </div>
         </div>
 
@@ -279,7 +329,8 @@
               <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">OLTP Application</span>
               <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Sales Department</span>
             </div>
-            <a href="https://brillyarma.github.io/underconstruct.html" class="text-blue-600 hover:underline">Detail Project</a>
+            <a href="project.html?id=raisa" class="text-blue-600 hover:underline">Detail
+              Project</a>
           </div>
         </div>
 
@@ -288,7 +339,7 @@
           <img src="assets/img/ekskul.png" alt="Private LLM Infrastructure" class="w-full h-48 object-cover" />
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2">
-              Web Pendaftaran & Informasi Ekskul SMA Widuri
+              School Extracurricular Registration & Information Web (SMA Widuri)
             </h3>
             <p class="text-gray-600 dark:text-gray-400 mb-4">
               Role: Developer | Gunadarma University (2018-2019)
@@ -305,7 +356,8 @@
               <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Digital Transformation</span>
               <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Education</span>
             </div>
-            <a href="https://brillyarma.github.io/underconstruct.html" class="text-blue-600 hover:underline">Detail Project</a>
+            <a href="project.html?id=ekskul-widuri" class="text-blue-600 hover:underline">Detail
+              Project</a>
           </div>
         </div>
       </div>
@@ -667,20 +719,9 @@
           <a href="mailto:brilly.arma@gmail.com" target="_blank"
             class="link-item flex items-center p-4 bg-gray-50 rounded-lg transition duration-300 border border-gray-200 hover:bg-gray-100">
             <i class="fas fa-envelope text-xl text-green-600 mr-4"></i>
-            <!-- Using a generic chart icon for Glassdoor -->
             <div>
               <span class="font-semibold text-gray-900">Email Me</span>
               <span class="text-sm text-gray-500 block">Send a message directly to me</span>
-            </div>
-          </a>
-
-          <!-- Phone Link -->
-          <a href="tel:6282329069988" target="_blank"
-            class="link-item flex items-center p-4 bg-red-600 text-white rounded-lg transition duration-300 hover:bg-red-700 shadow-md">
-            <i class="fas fa-phone text-xl mr-4"></i> <!-- Using a briefcase icon for job search -->
-            <div>
-              <span class="font-semibold">Call Me</span>
-              <span class="text-sm opacity-90 block">Reach me by phone</span>
             </div>
           </a>
 
@@ -689,7 +730,7 @@
 
       <!-- 2. Avatar Column (Right Side) -->
       <div class="md:w-1/2 flex justify-center items-center p-8 bg-gray-50 md:bg-white">
-        <!-- Placeholder for your profile image -->
+        <!-- Placeholder for profile image -->
         <img src="assets/img/brilly-contactme.jpg" alt="Profile Avatar"
           class="w-full max-w-xs h-auto rounded-full object-cover shadow-2xl border-8 border-white ring-4 ring-gray-100">
       </div>
@@ -702,7 +743,8 @@
     <div class="container mx-auto px-6 text-center">
       <p>Copyright &copy; 2026, Brilly Arfendo Gautama. All rights reserved.</p>
       <div class="mt-4 flex justify-center space-x-6">
-        <a href="https://github.com/" class="hover:text-indigo-400" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/BrillyArMa" class="hover:text-indigo-400" target="_blank"><i
+            class="fab fa-github"></i></a>
       </div>
     </div>
   </footer>
@@ -713,33 +755,155 @@
     <i class="fas fa-arrow-up"></i>
   </a>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script>
-    // Scroll to top button functionality
-    const backToTopButton = document.getElementById("back-to-top");
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.remove("hidden");
-      } else {
-        backToTopButton.classList.add("hidden");
-      }
-    });
+    $(function () {
+      const $nav = $("#site-nav"),
+        $menu = $("#nav-menu"),
+        $toggle = $("#nav-toggle"),
+        $top = $("#back-to-top");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // Event listener untuk klik tombol
-    backToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth", // Animasi scroll halus
+      /* ---------- 1. Menu hamburger ---------- */
+      const setMenu = (open) => {
+        $menu.toggleClass("open", open);
+        $toggle.attr("aria-expanded", open).find("i").toggleClass("fa-bars", !open).toggleClass("fa-times", open);
+      };
+      $toggle.on("click", () => setMenu(!$menu.hasClass("open")));
+      $(document).on("click", (e) => {
+        if (!$(e.target).closest("#site-nav").length) setMenu(false);
       });
-    });
+      $(document).on("keydown", (e) => {
+        if (e.key === "Escape") setMenu(false);
+      });
+      $(window).on("resize", () => {
+        if (window.innerWidth >= 1024) setMenu(false);
+      });
 
-    // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
+      /* ---------- 2. Smooth scroll back to top ---------- */
+      const SCROLL_OFFSET = 0;
+      const scrollToY = (y) => window.scrollTo({
+        top: y,
+        behavior: reduceMotion ? "auto" : "smooth"
+      }); // scroll bawaan browser
+      $(document).on("click", 'a[href^="#"]', function (e) {
+        const hash = $(this).attr("href");
+        const el = hash === "#" ? null : document.getElementById(hash.slice(1));
+        if (hash !== "#" && !el) return;
         e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
-        });
+        setMenu(false);
+        scrollToY(el ? Math.max(0, $(el).offset().top - SCROLL_OFFSET) : 0);
       });
+      $(window).on("scroll", () => $top.toggleClass("hidden", $(window).scrollTop() <= 300));
+
+      /* ---------- 3. Language EN / ID ---------- */
+      const T = [];
+      const add = ($e, id) => T.push([$e, id]);
+      const many = ($e, list) => $.each(list, (i, t) => add($e.eq(i), t));
+      const cards = $("#projects .grid > div"),
+        exp = $("#experience .grid > div");
+
+      many($("#nav-menu a"), ["Beranda", "Tentang Saya", "Proyek", "Pengalaman", "Keahlian", "Sertifikasi",
+        "Kontak"
+      ]);
+      add($("#hero p"), "Solusi Bisnis Berbasis AI, FullStack Developer & Auditor | Penggemar Keamanan Siber");
+      many($("#hero .flex a"), ["Lihat Proyek", "Hubungi Saya"]);
+
+      add($("#about h2"), "Tentang Saya");
+      add($("#about p").eq(0),
+        `Profesional dengan keahlian hibrida di bidang Keamanan Data, Pengembangan Perangkat Lunak, dan Implementasi Bisnis. Selama di <b>Telkomsel (2020–2022)</b>, saya membangun sistem penting, mulai dari platform pelaporan analitik hingga solusi pengelolaan data yang kompleks, yang membuktikan kemampuan saya mengubah kebutuhan bisnis yang rumit menjadi kode yang skalabel dan fungsional. Keahlian ini semakin dalam berkat empat tahun saya sebagai <b>Auditor Internal di BNN</b>, tempat saya memahami tata kelola risiko dan identifikasi kerentanan secara sistematis. Kini saya memadukan dua disiplin ini untuk merancang solusi berbasis AI (LLM) yang inovatif dalam fungsi sekaligus menjaga integritas data dari ujung ke ujung.`
+      );
+      add($("#about p").eq(1), `"Inovasi digerakkan oleh data dan dilindungi oleh prinsip keamanan."`);
+
+      add($("#projects h2"), "Ringkasan Proyek");
+      add($("#projects .p-6 > p:first-of-type"), (en) => en.replace("Role:", "Peran:").replace(
+        "Independent Project", "Proyek Mandiri"));
+      add($("#projects .p-6 > a"), "Detail Proyek");
+      add(cards.eq(3).find("span.bg-gray-100"), "Internet Gratis");
+      add(cards.eq(5).find("h3"), "Web Pendaftaran &amp; Informasi Ekskul SMA Widuri");
+      const sums = [
+        "Chatbot AI WhatsApp yang cerdas dan responsif untuk menjawab pertanyaan dan memproses booking studio musik. Menghemat Rp120.000/bulan dan 89% lebih efisien.",
+        "Merancang lingkungan LLM privat dengan server inferensi aman untuk solusi AI internal.",
+        "Menyusun 4+ Business Requirement Document (BRD) untuk pengembangan dashboard dan alat internal.",
+        "Mengembangkan sistem data daring untuk mengelola autentikasi siswa, guru, dan orang tua selama pandemi COVID-19.",
+        "Mengembangkan sistem pelaporan terpusat untuk GraPARI dengan menyatukan data manual dari berbagai area ke dalam satu database terintegrasi.",
+        "Menyederhanakan administrasi ekstrakurikuler sekolah dengan mendigitalkan proses manual menjadi platform yang lebih tertata dan mudah diakses semua pengguna."
+      ];
+      cards.each(function (i) {
+        add($(this).find(".p-6 > p").eq(1), sums[i]);
+      });
+
+      add($("#experience h2"), "Pengalaman Profesional");
+      add($("#experience .grid > div > span"), (en) => en.replace("Present", "Sekarang"));
+      const bullets = [
+        ["Melaksanakan penilaian kerentanan keamanan TI dan audit ISO 27001 untuk divisi riset BNN.",
+          "Mengelola siklus audit internal di Kantor Pusat dan unit daerah untuk memastikan kepatuhan terhadap kebijakan.",
+          "Menerapkan komponen utama SAKIP (Sistem Akuntabilitas Kinerja Instansi Pemerintah) untuk meningkatkan transparansi layanan.",
+          "Melakukan penilaian risiko menyeluruh dan memberikan rekomendasi berbasis data untuk menekan kerentanan operasional."
+        ],
+        ["Menjadi Technical Liaison utama antara tim Sales/Escalation dan IT, menerjemahkan kebutuhan bisnis non-teknis yang kompleks menjadi spesifikasi teknis yang dapat dikerjakan.",
+          "Menyusun 4+ Business Requirement Document (BRD) untuk dashboard dan alat internal baru agar pengembangan selaras dengan tujuan pertumbuhan perusahaan.",
+          "Mengelola proyek migrasi Big Data prioritas tinggi atas permintaan GM Sales untuk meningkatkan skalabilitas dan aksesibilitas data antardepartemen.",
+          "Mengembangkan platform pelaporan terpusat untuk operasional GraPARI (Brief, Revenue Handover, Operational Compliance).",
+          "Menyeragamkan input manual dari berbagai area ke dalam satu database terpadu sehingga analisis data untuk Head Office lebih cepat dan akurat.",
+          `Efisiensi sistem ini mengantarkan pada penghargaan <span class="font-semibold">"Best Application of Sales Directorate"</span> pada 2020.`,
+          "Merancang dan merilis database terpusat serta antarmuka web untuk mengelola data kelayakan jutaan siswa, guru, dan orang tua selama pandemi.",
+          "Membangun sistem verifikasi otomatis yang memvalidasi kelayakan pelanggan seketika, sehingga waktu verifikasi manual jauh berkurang dan eskalasi lebih lancar."
+        ],
+        ["Meningkatkan hasil belajar mahasiswa melalui praktikum intensif di tiga bidang: Jaringan Komputer (rata-rata pemahaman 83%), Pengembangan Aplikasi Android (80%), dan implementasi FPGA (87%).",
+          "Merancang, mengembangkan, dan menerapkan modul pembelajaran yang digunakan lebih dari 40 mahasiswa per semester untuk mendukung kebutuhan teori dan praktik kurikulum.",
+          "Mengelola seluruh siklus penilaian akademik, termasuk menyusun instrumen ujian dan memberikan evaluasi kinerja teknis yang rinci untuk memastikan kompetensi mahasiswa."
+        ]
+      ];
+      exp.each(function (i) {
+        many($(this).find("li"), bullets[i]);
+      });
+
+      add($("#skills h2"), "Teknologi & Keahlian");
+      add($("#certifications h2"), "Sertifikasi & Pelatihan");
+      many($("#certifications th"), ["Tahun", "Pengembangan Profesional", "Organisasi"]);
+
+      add($("#contact h1"), "Hubungi Saya");
+      add($("#contact p").eq(0),
+        "Punya ide proyek atau sekadar ingin menyapa? Saya selalu terbuka untuk terhubung dengan orang-orang berbakat dan menjajaki peluang baru. Mari bangun sesuatu yang hebat!"
+      );
+      const cT = ["Profil GitHub", "LinkedIn", "Kirim Email", "Telepon Saya"];
+      const cS = ["Lihat repositori kode saya", "Terhubung secara profesional dengan saya",
+        "Kirim pesan langsung kepada saya", "Hubungi saya lewat telepon"
+      ];
+      $("#contact .space-y-6 a").each(function (i) {
+        add($(this).find("span").eq(0), cT[i]);
+        add($(this).find("span").eq(1), cS[i]);
+      });
+      add($("footer p").eq(0), "Hak Cipta &copy; 2026, Brilly Arfendo Gautama. Seluruh hak dilindungi.");
+
+      function setLang(lang) {
+        $.each(T, (_, [$e, id]) => $e.each(function () {
+          const $el = $(this);
+          if ($el.data("en") === undefined) $el.data("en", $el.html()); // first time save teks in Inggris
+          const en = $el.data("en");
+          $el.html(lang === "id" ? (typeof id === "function" ? id(en) : id) : en);
+        }));
+        $("html").attr("lang", lang);
+        $(".lang-btn").each(function () {
+          const on = $(this).data("lang") === lang;
+          $(this).toggleClass("bg-white text-black font-semibold", on).toggleClass("text-white", !on).attr(
+            "aria-pressed", on);
+        });
+        try {
+          localStorage.setItem("lang", lang);
+        } catch (e) {}
+      }
+      let saved = null;
+      try {
+        saved = localStorage.getItem("lang");
+      } catch (e) {}
+      const q = new URLSearchParams(location.search).get("lang");
+      const start = [q, saved].find((l) => l === "id" || l === "en") || "en"; // default: English
+      $(".lang-btn").on("click", function () {
+        setLang($(this).data("lang"));
+      });
+      setLang(start);
     });
   </script>
 </body>
