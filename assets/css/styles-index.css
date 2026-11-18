@@ -1,0 +1,106 @@
+.code-tag {
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .code-tag span {
+      font-size: 13px;
+      color: DodgerBlue;
+    }
+
+    /* Custom style for logo simulation (to make them look like icons) */
+    .logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      /* Rounded corners for the logo */
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      /* Fixed width of the icon area */
+      height: 60px;
+      /* Fixed height of the icon area */
+      border-radius: 12px;
+      /* Rounded corners for the logo container */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      /* Ensures the image stays within the rounded box */
+    }
+
+    /* Style for the actual image inside the container */
+    .logo-container img {
+      width: 100%;
+      /* Image takes full width of its parent container */
+      height: 100%;
+      /* Image takes full height of its parent container */
+      object-fit: contain;
+    }
+
+    /* Custom styling to mimic the clean, modern feel */
+    .link-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Custom navbar with CSS */
+    #nav-toggle {
+      display: none;
+    }
+
+    #nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: #000;
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #1f2937;
+    }
+
+    #nav-menu.open {
+      display: block;
+    }
+
+    #nav-menu li+li {
+      margin-top: .5rem;
+    }
+
+    #nav-menu a {
+      display: block;
+      padding: .25rem 0;
+      color: #fff;
+    }
+
+    #nav-menu a:hover {
+      color: #818cf8;
+    }
+
+    @media (max-width: 1023px) {
+      #nav-toggle {
+        display: block;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      #nav-menu {
+        display: flex;
+        position: static;
+        width: auto;
+        background: transparent;
+        padding: 0;
+        border: 0;
+      }
+
+      #nav-menu li+li {
+        margin: 0 0 0 2rem;
+      }
+    }
