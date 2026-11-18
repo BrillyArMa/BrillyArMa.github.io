@@ -1,5 +1,5 @@
 $(function () {
-        // ---------- Teks statics (label) ----------
+        // ---------- statics text (label) ----------
         const UI = {
           en: {
             nHome: "Home",
