@@ -205,7 +205,7 @@ window.PROJECTS = [
     ],
     links: {
       study:
-        "https://github.com/brillyarma/project-showcase/tree/main/cendana-whatsapp-bot/",
+        "https://github.com/BrillyArMa/project-showcase/tree/2bab42e7f9203ce6dc2248ba15a2dc19dd1b7640/whatsapp-bot-cendana",
       demo: "",
       repo: "",
       video: "",
