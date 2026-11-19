@@ -276,12 +276,12 @@ window.PROJECTS = [
     tech: ["CodeIgniter", "MySQL Database", "jQuery", "VPN", "OLTP Application"],
     domain: ["Sales Department", "Telecommunications"],
     gallery: [
-      { src: "assets/img/raisa-1-login.png", caption: t("Login screen (wireframe)", "Layar login (wireframe)") },
-      { src: "assets/img/raisa-2-menu.png", caption: t("Supervisor menu: daily, weekly and monthly checklists, plus reporting", "Menu supervisor: checklist harian, mingguan, dan bulanan, serta pelaporan") },
-      { src: "assets/img/raisa-3-checklist.png", caption: t("A monthly checklist form", "Form checklist bulanan") },
-      { src: "assets/img/raisa-6-categories.png", caption: t("Questions are grouped into categories, picked from a dropdown", "Pertanyaan dikelompokkan dalam kategori, dipilih lewat dropdown") },
-      { src: "assets/img/raisa-4-confirm.png", caption: t("Warning before saving: the data can't be changed afterwards", "Peringatan sebelum menyimpan: data tidak dapat diubah setelahnya") },
-      { src: "assets/img/raisa-5-reporting.png", caption: t("Reporting: filter, view and download", "Pelaporan: filter, lihat, dan unduh") }
+      { src: "assets/img/project/raisa/raisa-1-login.png", caption: t("Login screen (wireframe)", "Layar login (wireframe)") },
+      { src: "assets/img/project/raisa/raisa-2-menu.png", caption: t("Supervisor menu: daily, weekly and monthly checklists, plus reporting", "Menu supervisor: checklist harian, mingguan, dan bulanan, serta pelaporan") },
+      { src: "assets/img/project/raisa/raisa-3-checklist.png", caption: t("A monthly checklist form", "Form checklist bulanan") },
+      { src: "assets/img/project/raisa/raisa-6-categories.png", caption: t("Questions are grouped into categories, picked from a dropdown", "Pertanyaan dikelompokkan dalam kategori, dipilih lewat dropdown") },
+      { src: "assets/img/project/raisa/raisa-4-confirm.png", caption: t("Warning before saving: the data can't be changed afterwards", "Peringatan sebelum menyimpan: data tidak dapat diubah setelahnya") },
+      { src: "assets/img/project/raisa/raisa-5-reporting.png", caption: t("Reporting: filter, view and download", "Pelaporan: filter, lihat, dan unduh") }
     ],
     note: t("Internal Telkomsel system, described at process level. No data, screenshots or system details are shown.", "Sistem internal Telkomsel, dijelaskan pada tingkat proses. Tidak ada data, screenshot, atau detail sistem yang ditampilkan."),
     links: { study: "https://github.com/BrillyArMa/project-showcase/tree/b89c8b94d5d854f0849ab1b0e21d74ffd8fb9677/RAISA", demo: "", repo: "", video: "" }
