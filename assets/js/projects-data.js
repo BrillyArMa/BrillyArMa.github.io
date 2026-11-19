@@ -19,7 +19,7 @@ window.PROJECTS = [
     ),
     problem: t(
       "Cendana Music Studio ran its WhatsApp by hand. Every question about prices, rules or free slots, and every booking, went through an admin. When the admin was busy, replies could take hours, and it was easy to misread a date or a time while checking the schedule by manual. The owner was planning to pay someone extra just to look after the chat.",
-      "Semua chat WhatsApp di Cendana Music Studio dibalas manual. Pertanyaan soal harga, aturan, atau jam kosong, sampai booking, semuanya melalui admin. Kalau admin sedang sibuk, balasan bisa baru diberikan berjam-jam kemudian, dan mengecek jadwal secara manual dapat terjadi salah baca tanggal atau jam. Owner berencana membayar tambahan untuk orang yang khusus mengurus chat.",
+      "Semua chat WhatsApp di Cendana Music Studio dibalas manual. Pertanyaan tentang harga, aturan, atau jam kosong, sampai booking, semuanya melalui admin. Kalau admin sedang sibuk, balasan baru bisa diberikan berjam-jam kemudian, dan mengecek jadwal secara manual dapat terjadi salah baca tanggal atau jam. Owner berencana membayar tambahan untuk orang yang khusus mengurus chat.",
     ),
     solution: t(
       "I built an n8n workflow that connects WhatsApp to an AI model running on a private server. The assistant answers from the studio's price list and rules, and checks Google Calendar for free slots. It works out the total, discounts included, and writes each confirmed booking to the calendar and a spreadsheet. Payment stays manual: the owner prefers to be paid at the studio after the session, so I left that part alone.",
@@ -173,11 +173,11 @@ window.PROJECTS = [
     challenges: [
       t(
         "People type booking details however they like, and the details don't always agree. In one sample chat the time range was 2 PM to 6 PM (4 hours), but the duration said 2 hours. The assistant caught it and asked which was right before working out the price.",
-        "Penggune menulis data booking sesuka mereka, dan terkadang isinya tidak selalu benar. Di salah satu contoh chat, jamnya tertulis mulai sewa dari jam 2 siang sampai jam 6 sore (4 jam), tetapi durasi sewanya hanya tertulis 2 jam. Asisten menangkap perbedaan itu dan menanyakan mana yang benar sebelum menghitung biaya.",
+        "Pengguna menulis data booking sesuka mereka, dan terkadang isinya tidak selalu benar. Di salah satu contoh chat, jamnya tertulis mulai sewa dari jam 2 siang sampai jam 6 sore (4 jam), tetapi durasi sewanya hanya tertulis 2 jam. Asisten menangkap perbedaan itu dan menanyakan mana yang benar sebelum menghitung biaya.",
       ),
       t(
         "A request can clash with an existing booking only in part. If booking 3 PM to 7 PM is taken, 6 PM to 9 PM has to be refused as well. The assistant apologizes and offers times outside the booked slot.",
-        "Permintaan bisa bentrok dengan booking lain. Kalau booking jam 3 sore sampai 7 malam sudah terisi, maka permintaan jam 6 sore sampai 9 malam tetap harus ditolak. Asisten meminta maaf dan menawarkan jam di luar jadwal yang terisi.",
+        "Permintaan bisa bentrok dengan jadwal booking yang lain. Kalau booking jam 3 sore sampai 7 malam sudah terisi, maka permintaan jam 6 sore sampai 9 malam tetap harus ditolak. Asisten meminta maaf dan menawarkan jam lain di luar dari jadwal yang telah terisi.",
       ),
     ],
     usecases: [
