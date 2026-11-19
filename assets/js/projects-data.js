@@ -219,57 +219,72 @@ window.PROJECTS = [
     role: t("Developer", "Developer"),
     period: "2020-2022 · Telkomsel",
     summary: t(
-      "A centralized reporting platform for GraPARI operations that replaced inconsistent manual reports with one database.",
-      "Platform pelaporan terpusat untuk operasional GraPARI yang menggantikan laporan manual yang tidak seragam dengan satu database.",
+      "A web app that replaced Google Forms and spreadsheets for GraPARI, Telkomsel's customer service outlets. Outlets report once, in one place, and the numbers are calculated for them.",
+      "Aplikasi web yang menggantikan Google Form dan spreadsheet untuk GraPARI, gerai layanan pelanggan Telkomsel. Outlet melapor sekali di satu tempat, dan angkanya dihitung otomatis."
     ),
     problem: t(
-      "Each area reported Brief/Debrief, Revenue Handover and Operational Compliance in its own manual format, so the Head Office could not analyze the data quickly.",
-      "Tiap area melaporkan Brief/Debrief, Revenue Handover, dan Operational Compliance dengan format manual sendiri, sehingga Head Office sulit menganalisis data dengan cepat.",
+      "Before RAISA, head office sent a Google Form link to the area teams, who passed it on to each outlet. Outlet names were misspelled, numbers were written in different formats, totals had to be recalculated by hand, and getting one period or a few outlets meant downloading everything and filtering it afterwards. The area teams spent days cleaning data before it could reach head office.",
+      "Sebelum RAISA, pusat mengirim tautan Google Form ke tim area, lalu diteruskan ke tiap outlet. Nama outlet salah ketik, angka ditulis dengan format berbeda, total harus dihitung ulang manual, dan untuk mengambil satu periode atau beberapa outlet saja, semua data harus diunduh lalu disaring sendiri. Tim area menghabiskan beberapa hari untuk merapikan data sebelum sampai ke pusat."
     ),
     solution: t(
-      "A web application with standardized input forms that stores every area's report in one integrated database, accessed through VPN.",
-      "Aplikasi web dengan form input standar yang menyimpan laporan semua area dalam satu database terintegrasi, diakses melalui VPN.",
+      "RAISA is an internal web application, reachable over VPN and hosted on the company's own servers. Outlets fill in standard forms, or upload an Excel template, with the questions, number formats and outlet list built in. The app calculates the percentages, as a preview before submitting and as the final value after, and everything lands in one database. Data can be filtered by date, month or outlet and downloaded as Excel.",
+      "RAISA adalah aplikasi web internal yang diakses lewat VPN dan dihosting di server milik perusahaan. Outlet mengisi form standar, atau mengunggah template Excel, dengan daftar pertanyaan, format angka, dan daftar outlet yang sudah tertanam. Aplikasi menghitung persentase, berupa pratinjau sebelum submit dan nilai akhir setelahnya, dan semuanya masuk ke satu database. Data bisa disaring berdasarkan tanggal, bulan, atau outlet lalu diunduh sebagai Excel."
     ),
     results: [
-      {
-        value: "2020",
-        label: t(
-          "Best Application of Sales Directorate award",
-          "Penghargaan Best Application of Sales Directorate",
-        ),
-      },
+      { value: t("~5 days", "~5 hari"), label: t("of working time saved per reporting cycle (my estimate)", "waktu kerja dihemat tiap siklus pelaporan (perkiraan saya)") },
+      { value: t("~400 outlets", "~400 outlet"), label: t("across four regional areas, about 3,000 staff (2021)", "di empat area wilayah, sekitar 3.000 pegawai (2021)") },
+      { value: "2020", label: t("Best Application of Sales Directorate award", "Penghargaan Best Application of Sales Directorate") }
+    ],
+    flow: [
+      t("Outlet staff or team leaders fill in the daily brief and debrief, in the app or by uploading an Excel template.", "Staf outlet atau team leader mengisi brief dan debrief harian, di aplikasi atau lewat unggahan template Excel."),
+      t("Every week they do backchecking: the work, data and reports are re-checked, and the percentage is calculated automatically.", "Setiap minggu mereka melakukan backchecking: hasil kerja, data, dan laporan diperiksa ulang, dan persentasenya dihitung otomatis."),
+      t("Each month, a supervisor approves the revenue handover minutes for their own region.", "Setiap bulan, supervisor menyetujui berita acara serah terima revenue untuk wilayahnya sendiri."),
+      t("Head office receives the data as soon as it is submitted and checks the summary instead of the whole dataset.", "Pusat menerima data begitu disubmit dan cukup memeriksa ringkasannya, bukan seluruh data."),
+      t("Analysts filter by date, month or outlet and download the result as Excel for Excel, Tableau or Power BI.", "Analis menyaring berdasarkan tanggal, bulan, atau outlet, lalu mengunduh hasilnya sebagai Excel untuk Excel, Tableau, atau Power BI.")
     ],
     features: [
-      t(
-        "Standardized forms for 3 report types",
-        "Form standar untuk 3 jenis laporan",
-      ),
-      t(
-        "Centralized database for all areas",
-        "Database terpusat untuk semua area",
-      ),
-      t(
-        "Faster analysis for the Head Office",
-        "Analisis lebih cepat untuk Head Office",
-      ),
+      t("Standard forms with the questions, number formats and outlet list built in", "Form standar dengan pertanyaan, format angka, dan daftar outlet yang sudah tertanam"),
+      t("Excel upload as a second way to fill in", "Unggah Excel sebagai cara pengisian kedua"),
+      t("Percentage preview before submitting, final value after", "Pratinjau persentase sebelum submit, nilai akhir setelahnya"),
+      t("Access by role and region, with guest and login modes", "Akses berdasarkan peran dan wilayah, dengan mode tamu dan login"),
+      t("Filtering by date, month or outlet, and Excel download", "Penyaringan berdasarkan tanggal, bulan, atau outlet, dan unduhan Excel")
     ],
-    tech: ["CodeIgniter", "MySQL Database", "VPN", "OLTP Application"],
-    domain: ["Sales Department"],
-    gallery: [],
-    note: t(
-      "Internal system, described at process level. Names, data and screenshots are anonymized.",
-      "Sistem internal, dijelaskan pada tingkat proses. Nama, data, dan screenshot disamarkan.",
-    ),
-    flow: [],
-    decisions: [],
-    usecases: [],
-    links: {
-      study: "https://github.com/brillyarma/project-showcase/tree/main/raisa/",
-      demo: "",
-      repo: "",
-      video: "",
-    },
-    challenges: [],
+    decisions: [
+      { title: t("One central application instead of forms and spreadsheets", "Satu aplikasi pusat menggantikan form dan spreadsheet"),
+        why: t("Most of the problems came from people typing the same things in their own way. Standard forms give every outlet the same format.", "Sebagian besar masalah berasal dari orang yang mengetik hal yang sama dengan caranya sendiri. Form standar memberi semua outlet format yang sama.") },
+      { title: t("The app does the calculating", "Aplikasi yang menghitung"),
+        why: t("Percentages are worked out automatically, with a preview before submission and a final value after. Nobody recalculates by hand.", "Persentase dihitung otomatis, dengan pratinjau sebelum submit dan nilai akhir setelahnya. Tidak ada yang menghitung ulang secara manual.") },
+      { title: t("Data goes straight to head office", "Data langsung sampai ke pusat"),
+        why: t("The area team no longer collects and re-sends files, but can still see what each outlet submitted.", "Tim area tidak lagi mengumpulkan dan mengirim ulang file, tetapi tetap bisa melihat apa yang diisi tiap outlet.") },
+      { title: t("Filters plus Excel export instead of building every report", "Filter dan ekspor Excel, bukan membangun semua laporan"),
+        why: t("Analysts already work in Excel, Tableau or Power BI, so I let them take exactly the data they need into those tools.", "Analis sudah bekerja dengan Excel, Tableau, atau Power BI, jadi saya membiarkan mereka mengambil data yang mereka butuhkan ke alat-alat itu.") },
+      { title: t("Access by role and region", "Akses berdasarkan peran dan wilayah"),
+        why: t("Outlets fill in, supervisors approve and see only their own region, and only selected roles see revenue values.", "Outlet mengisi, supervisor menyetujui dan hanya melihat wilayahnya sendiri, dan hanya peran tertentu yang melihat nilai revenue.") }
+    ],
+    challenges: [
+      t("Making the numbers agree. The preview score is calculated in the browser with jQuery and the final score is calculated again after submitting. If they differed, or if both differed from a hand calculation, that would be a serious mistake, so I tested every form against all three until they agreed. The Excel download had to match the screen as well.",
+        "Membuat angka selalu sama. Skor pratinjau dihitung di browser dengan jQuery dan skor akhir dihitung lagi setelah submit. Kalau keduanya berbeda, atau berbeda dari hitungan manual, itu kesalahan fatal, jadi saya menguji setiap form terhadap ketiganya sampai cocok. Unduhan Excel juga harus sama dengan tampilan di layar."),
+      t("Filling in by Excel upload. Users asked for a faster way than typing every answer. I built the template with a dropdown list in every cell to keep names and answers consistent, and on the server I made sure each value lands in the right column. Only Excel files are accepted, and the values are filtered so that something like a delete command is just text.",
+        "Pengisian lewat unggahan Excel. Pengguna meminta cara yang lebih cepat daripada mengetik setiap jawaban. Saya membuat template dengan daftar pilihan di setiap sel agar nama dan jawaban tetap seragam, dan di server saya memastikan setiap nilai masuk ke kolom yang benar. Hanya file Excel yang diterima, dan nilainya disaring sehingga perintah seperti hapus data hanya menjadi teks biasa."),
+      t("Access control. Protected menus ask for a login, but a link copied from a logged-in user must not open them either, so every protected page checks the session itself. Supervisors can only see the records of their own region.",
+        "Kontrol akses. Menu yang dilindungi meminta login, tetapi tautan yang disalin dari pengguna yang sudah login juga tidak boleh membukanya, jadi setiap halaman yang dilindungi memeriksa sesinya sendiri. Supervisor hanya bisa melihat catatan wilayahnya sendiri.")
+    ],
+    usecases: [
+      t("Retail and franchise chains", "Jaringan ritel dan waralaba"), t("Bank branch operations", "Operasional cabang bank"), t("Logistics hubs", "Pusat logistik"),
+      t("Clinic networks", "Jaringan klinik"), t("Field service teams", "Tim layanan lapangan")
+    ],
+    tech: ["CodeIgniter", "MySQL Database", "jQuery", "VPN", "OLTP Application"],
+    domain: ["Sales Department", "Telecommunications"],
+    gallery: [
+      { src: "assets/img/raisa-1-login.png", caption: t("Login screen (wireframe)", "Layar login (wireframe)") },
+      { src: "assets/img/raisa-2-menu.png", caption: t("Supervisor menu: daily, weekly and monthly checklists, plus reporting", "Menu supervisor: checklist harian, mingguan, dan bulanan, serta pelaporan") },
+      { src: "assets/img/raisa-3-checklist.png", caption: t("A monthly checklist form", "Form checklist bulanan") },
+      { src: "assets/img/raisa-6-categories.png", caption: t("Questions are grouped into categories, picked from a dropdown", "Pertanyaan dikelompokkan dalam kategori, dipilih lewat dropdown") },
+      { src: "assets/img/raisa-4-confirm.png", caption: t("Warning before saving: the data can't be changed afterwards", "Peringatan sebelum menyimpan: data tidak dapat diubah setelahnya") },
+      { src: "assets/img/raisa-5-reporting.png", caption: t("Reporting: filter, view and download", "Pelaporan: filter, lihat, dan unduh") }
+    ],
+    note: t("Internal Telkomsel system, described at process level. No data, screenshots or system details are shown.", "Sistem internal Telkomsel, dijelaskan pada tingkat proses. Tidak ada data, screenshot, atau detail sistem yang ditampilkan."),
+    links: { study: "https://github.com/brillyarma/project-showcase/tree/main/raisa/", demo: "", repo: "", video: "" }
   },
   {
     id: "private-llm",
