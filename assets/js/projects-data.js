@@ -284,7 +284,7 @@ window.PROJECTS = [
       { src: "assets/img/raisa-5-reporting.png", caption: t("Reporting: filter, view and download", "Pelaporan: filter, lihat, dan unduh") }
     ],
     note: t("Internal Telkomsel system, described at process level. No data, screenshots or system details are shown.", "Sistem internal Telkomsel, dijelaskan pada tingkat proses. Tidak ada data, screenshot, atau detail sistem yang ditampilkan."),
-    links: { study: "https://github.com/brillyarma/project-showcase/tree/main/raisa/", demo: "", repo: "", video: "" }
+    links: { study: "https://github.com/BrillyArMa/project-showcase/tree/b89c8b94d5d854f0849ab1b0e21d74ffd8fb9677/RAISA", demo: "", repo: "", video: "" }
   },
   {
     id: "private-llm",
