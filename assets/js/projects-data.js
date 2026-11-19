@@ -19,7 +19,7 @@ window.PROJECTS = [
     ),
     problem: t(
       "Cendana Music Studio ran its WhatsApp by hand. Every question about prices, rules or free slots, and every booking, went through an admin. When the admin was busy, replies could take hours, and it was easy to misread a date or a time while checking the schedule by manual. The owner was planning to pay someone extra just to look after the chat.",
-      "Semua chat WhatsApp di Cendana Music Studio dibalas manual. Pertanyaan tentang harga, aturan, atau jam kosong, sampai booking, semuanya melalui admin. Kalau admin sedang sibuk, balasan baru bisa diberikan berjam-jam kemudian, dan mengecek jadwal secara manual dapat terjadi salah baca tanggal atau jam. Owner berencana membayar tambahan untuk orang yang khusus mengurus chat.",
+      "Semua chat WhatsApp di Cendana Music Studio dibalas manual. Pertanyaan tentang harga, aturan, atau jam kosong, sampai booking, semuanya melalui admin. Jika admin sedang sibuk, balasan baru bisa diberikan berjam-jam kemudian, dan mengecek jadwal secara manual dapat terjadi salah baca tanggal atau jam. Owner berencana membayar tambahan untuk orang yang khusus mengurus chat.",
     ),
     solution: t(
       "I built an n8n workflow that connects WhatsApp to an AI model running on a private server. The assistant answers from the studio's price list and rules, and checks Google Calendar for free slots. It works out the total, discounts included, and writes each confirmed booking to the calendar and a spreadsheet. Payment stays manual: the owner prefers to be paid at the studio after the session, so I left that part alone.",
@@ -177,7 +177,7 @@ window.PROJECTS = [
       ),
       t(
         "A request can clash with an existing booking only in part. If booking 3 PM to 7 PM is taken, 6 PM to 9 PM has to be refused as well. The assistant apologizes and offers times outside the booked slot.",
-        "Permintaan bisa bentrok dengan jadwal booking yang lain. Kalau booking jam 3 sore sampai 7 malam sudah terisi, maka permintaan jam 6 sore sampai 9 malam tetap harus ditolak. Asisten meminta maaf dan menawarkan jam lain di luar dari jadwal yang telah terisi.",
+        "Permintaan bisa bentrok dengan jadwal booking yang lain. Jika booking jam 3 sore sampai 7 malam sudah terisi, maka permintaan jam 6 sore sampai 9 malam tetap harus ditolak. Asisten meminta maaf dan menawarkan jam lain di luar dari jadwal yang telah terisi.",
       ),
     ],
     usecases: [
