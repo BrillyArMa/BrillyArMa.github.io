@@ -605,7 +605,7 @@ window.PROJECTS = [
     ],
     links: {
       study:
-        "https://github.com/brillyarma/project-showcase/tree/main/ekskul-registration/",
+        "https://github.com/BrillyArMa/project-showcase/tree/7493f935c95d82636f3368ec75e5a7e41b838b3b/ekskul-widuri",
       demo: "",
       repo: "",
       video: "",
