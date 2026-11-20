@@ -405,29 +405,204 @@ window.PROJECTS = [
     id: "ekskul-widuri",
     type: "code",
     image: "assets/img/ekskul.png",
-    title: "Web Pendaftaran & Informasi Ekskul SMA Widuri",
+    title: "Widuri Ekskul: Extracurricular Registration & Information System",
     role: t("Developer", "Developer"),
-    period: "2018-2019 · Gunadarma University",
+    period: t("2017-2019 · University project", "2017-2019 · Proyek kuliah"),
     summary: t(
-      "A dual-portal web app that digitizes extracurricular registration and grading.",
-      "Aplikasi web dua portal yang mendigitalkan pendaftaran dan penilaian ekstrakurikuler.",
+      "A website for a high school's extracurricular activities. Students find the activities, sign up online and see their grades, and teachers run their own pages.",
+      "Website untuk kegiatan ekstrakurikuler sebuah SMA. Siswa menemukan kegiatan, mendaftar online, dan melihat nilai, sementara guru mengelola halaman kegiatannya sendiri.",
     ),
     problem: t(
-      "Extracurricular administration was done manually.",
-      "Administrasi ekstrakurikuler dilakukan secara manual.",
+      "Extracurricular activities are compulsory for every student at SMA Widuri, but students had a hard time finding out how to join one and when it met. One new student almost never attended any activity for a whole semester because the information never reached them.",
+      "Ekstrakurikuler wajib diikuti seluruh siswa SMA Widuri, tetapi siswa kesulitan mencari tahu cara mendaftar dan jadwalnya. Seorang siswa baru bahkan hampir tidak pernah mengikuti ekskul selama satu semester karena informasinya tidak sampai kepadanya.",
     ),
     solution: t(
-      "Students see schedules and evaluations; teachers manage registrations and grades.",
-      "Siswa melihat jadwal dan evaluasi; guru mengelola pendaftaran dan nilai.",
+      "Widuri Ekskul is a public website. Anyone can browse the activities, their teachers, schedules, photos and news without logging in. Students log in to sign up and see their grades, and teachers log in to give grades and post news. Student affairs staff create the accounts, keep the activity pages up to date and help when someone forgets a password.",
+      "Widuri Ekskul adalah website publik. Siapa pun bisa melihat kegiatan, pengajar, jadwal, foto, dan berita tanpa login. Siswa login untuk mendaftar dan melihat nilai, sedangkan guru login untuk memberi nilai dan memposting berita. Pembina kesiswaan membuatkan akun, memperbarui halaman kegiatan, dan membantu bila ada yang lupa password.",
     ),
-    results: [],
-    features: [],
-    tech: ["CodeIgniter", "MySQL Database"],
-    domain: ["Education"],
-    gallery: [],
-    flow: [],
-    decisions: [],
-    usecases: [],
+    results: [
+      { value: "~270", label: t("students at the school", "siswa di sekolah") },
+      {
+        value: "~9",
+        label: t(
+          "activities, each with its own teacher",
+          "kegiatan ekskul, masing-masing dengan pengajarnya",
+        ),
+      },
+      {
+        value: "2018-2019",
+        label: t(
+          "in real use by the school, until the server and domain lapsed",
+          "dipakai nyata oleh sekolah, sampai server dan domain tidak diperpanjang",
+        ),
+      },
+    ],
+    flow: [
+      t(
+        "Student affairs staff create accounts for new students and for each activity's teacher.",
+        "Pembina kesiswaan membuat akun untuk siswa baru dan untuk guru tiap kegiatan.",
+      ),
+      t(
+        "Anyone can browse the activities: description, photos, schedule, number of members, duration and teacher.",
+        "Siapa pun bisa melihat kegiatan: deskripsi, foto, jadwal, jumlah anggota, lama kegiatan, dan pengajar.",
+      ),
+      t(
+        "Students log in, sign up for an activity and later see their grades.",
+        "Siswa login, mendaftar ke sebuah kegiatan, lalu melihat nilainya.",
+      ),
+      t(
+        "Teachers log in to give a score and written feedback, and to post news.",
+        "Guru login untuk memberi nilai dan catatan perbaikan, serta memposting berita.",
+      ),
+      t(
+        "Staff help whenever someone forgets a password.",
+        "Pembina membantu setiap kali ada yang lupa password.",
+      ),
+    ],
+    features: [
+      t(
+        "Public pages for activities, teachers, schedules and news",
+        "Halaman publik untuk kegiatan, pengajar, jadwal, dan berita",
+      ),
+      t(
+        "Online sign-up for an activity",
+        "Pendaftaran online ke sebuah kegiatan",
+      ),
+      t(
+        "Grades with a score and written feedback",
+        "Penilaian berupa angka dan catatan perbaikan",
+      ),
+      t(
+        "Teachers give grades and post news with photos and videos",
+        "Guru memberi nilai dan memposting berita dengan foto dan video",
+      ),
+      t(
+        "Accounts created by student affairs staff",
+        "Akun dibuat oleh pembina kesiswaan",
+      ),
+      t(
+        "Works on a computer and on a smartphone",
+        "Bisa dipakai di komputer maupun smartphone",
+      ),
+    ],
+    decisions: [
+      {
+        title: t(
+          "Information is public, login is only for actions",
+          "Informasi terbuka, login hanya untuk aksi",
+        ),
+        why: t(
+          "The problem was that students couldn't find information. Anyone can read about the activities, and a login is only needed to sign up, give grades or post news.",
+          "Masalahnya, siswa sulit menemukan informasi. Siapa pun bisa membaca soal kegiatan, dan login hanya diperlukan untuk mendaftar, memberi nilai, atau memposting berita.",
+        ),
+      },
+      {
+        title: t(
+          "Student affairs staff create the accounts",
+          "Pembina kesiswaan yang membuat akun",
+        ),
+        why: t(
+          "Extracurriculars are compulsory for every student, so staff create the accounts for all new students and each teacher. Every account belongs to a real student or teacher.",
+          "Ekskul wajib diikuti semua siswa, jadi pembina membuatkan akun untuk seluruh siswa baru dan tiap guru. Setiap akun milik siswa atau guru yang nyata.",
+        ),
+      },
+      {
+        title: t(
+          "Teachers post their own news",
+          "Guru memposting beritanya sendiri",
+        ),
+        why: t(
+          "Each teacher publishes news about their own activity, so announcements stay current without waiting for someone else.",
+          "Tiap guru menerbitkan berita tentang kegiatannya sendiri, sehingga pengumuman tetap terbaru tanpa menunggu orang lain.",
+        ),
+      },
+      {
+        title: t(
+          "A score plus written feedback",
+          "Angka disertai catatan perbaikan",
+        ),
+        why: t(
+          "Teachers give a number and also explain what to improve, so students learn more than just the result.",
+          "Guru memberi angka sekaligus menjelaskan apa yang perlu diperbaiki, jadi siswa tahu lebih dari sekadar hasil.",
+        ),
+      },
+      {
+        title: t(
+          "Teachers only see what they need",
+          "Guru hanya melihat yang mereka perlukan",
+        ),
+        why: t(
+          "Activity teachers can only open the news and grades menus. The list of users and the access settings belong to a superuser account, which I handed over to the head and deputy of student affairs.",
+          "Guru pengajar ekskul hanya bisa membuka menu berita dan nilai. Daftar pengguna dan pengaturan hak akses ada pada akun superuser, yang saya serahkan kepada ketua dan wakil kesiswaan.",
+        ),
+      },
+    ],
+    challenges: [
+      t(
+        "A public application has to be careful. Logins work with sessions, text input is filtered for special characters that could be used to run commands, and uploads have a size limit, because teachers add photos and videos with their descriptions and news.",
+        "Aplikasi publik harus berhati-hati. Login memakai sesi, input teks disaring dari karakter khusus yang bisa dipakai untuk menjalankan perintah, dan unggahan dibatasi ukurannya, karena guru menambahkan foto dan video bersama deskripsi dan berita.",
+      ),
+      t(
+        "Planning for after I left. The site stopped when I started working and no one at the school could look after it, including renewing the server and the domain. It taught me to talk about hosting costs and handover with the client from the start.",
+        "Merencanakan masa setelah saya pergi. Situs berhenti saat saya mulai bekerja dan tidak ada orang di sekolah yang bisa merawatnya, termasuk memperpanjang server dan domain. Dari situ saya belajar membahas biaya hosting dan serah terima dengan klien sejak awal.",
+      ),
+    ],
+    usecases: [
+      t("Schools", "Sekolah"),
+      t(
+        "Universities and student organizations",
+        "Universitas dan organisasi mahasiswa",
+      ),
+      t("Sports clubs", "Klub olahraga"),
+      t("Training centers", "Pusat pelatihan"),
+      t("Community groups", "Komunitas"),
+    ],
+    tech: ["CodeIgniter", "MySQL Database", "PHP"],
+    domain: ["Education", "EdTech"],
+    gallery: [
+      {
+        src: "assets/img/project/ekskul-widuri/ekskul-1-home.png",
+        caption: t(
+          "The public home page",
+          "Beranda publik",
+        ),
+      },
+      {
+        src: "assets/img/project/ekskul-widuri/ekskul-2-mobile.png",
+        caption: t(
+          "The same site on a smartphone (photos blurred)",
+          "Beranda publik akses smartphone",
+        ),
+      },
+      {
+        src: "assets/img/project/ekskul-widuri/ekskul-3-student-score.png",
+        caption: t(
+          "A student's score summary",
+          "Ringkasan nilai ekskul siswa",
+        ),
+      },
+      {
+        src: "assets/img/project/ekskul-widuri/ekskul-4-fill-score.png",
+        caption: t(
+          "The scoring page in the admin panel (personal details hidden)",
+          "Halaman penilaian di panel admin (data pribadi disamarkan)",
+        ),
+      },
+      {
+        src: "assets/img/project/ekskul-widuri/ekskul-5-news.png",
+        caption: t(
+          "The public news page",
+          "Halaman berita sekolah akses publik",
+        ),
+      },
+      {
+        src: "assets/img/project/ekskul-widuri/ekskul-6-managing-news.png",
+        caption: t(
+          "Managing activity news in the admin panel",
+          "Panel admin untuk mengatur aktivitas berita",
+        ),
+      },
+    ],
     links: {
       study:
         "https://github.com/brillyarma/project-showcase/tree/main/ekskul-registration/",
@@ -435,6 +610,5 @@ window.PROJECTS = [
       repo: "",
       video: "",
     },
-    challenges: [],
   },
 ];
