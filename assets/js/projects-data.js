@@ -568,10 +568,10 @@ window.PROJECTS = [
         ),
       },
       {
-        src: "assets/img/project/ekskul-widuri/ekskul-2-mobile.png",
+        src: "assets/img/project/ekskul-widuri/ekskul-2-home-login.png",
         caption: t(
-          "The same site on a smartphone (photos blurred)",
-          "Beranda publik akses smartphone",
+          "The login home page",
+          "Beranda login",
         ),
       },
       {
