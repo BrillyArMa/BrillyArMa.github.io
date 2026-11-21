@@ -370,36 +370,62 @@ window.PROJECTS = [
     role: t("Developer", "Developer"),
     period: "2020-2022 · Telkomsel",
     summary: t(
-      "A data system that verifies student, teacher and parent eligibility during COVID-19 remote learning.",
-      "Sistem data yang memverifikasi kelayakan siswa, guru, dan orang tua selama pembelajaran jarak jauh COVID-19.",
+      "Telkomsel's free internet quota program for remote learning during COVID-19. I built the database, the hourly data load and the lookup menu that let customer service check whether a customer is on the list.",
+      "Program kuota internet gratis Telkomsel untuk belajar jarak jauh selama pandemi COVID-19. Saya membuat database, pemuatan data tiap jam, dan menu pencarian yang memungkinkan customer service memeriksa apakah seorang pelanggan ada dalam daftar."
     ),
     problem: t(
-      "Customer Service had to verify eligibility manually and escalate to IT, which took time.",
-      "Customer Service harus memverifikasi kelayakan secara manual dan eskalasi ke IT, sehingga memakan waktu.",
+      "During the pandemic, Telkomsel gave free internet quota to students, teachers, university students and lecturers across Indonesia, to support learning from home. Who qualified depended on lists built from government data. When someone who should have received the quota said they hadn't, customer service needed to know whether that person was on the list, and checking meant opening the database and knowing how to query it.",
+      "Selama pandemi, Telkomsel memberikan kuota internet gratis kepada siswa, guru, mahasiswa, dan dosen di seluruh Indonesia untuk mendukung belajar dari rumah. Siapa yang berhak bergantung pada daftar yang disusun dari data pemerintah. Saat seseorang yang seharusnya menerima kuota mengaku belum menerimanya, customer service perlu tahu apakah orang itu ada di daftar, dan untuk memeriksanya mereka harus membuka database dan paham cara melakukan query."
     ),
     solution: t(
-      "A centralized database and web interface integrating Kemendikbud and Dukcapil datasets, with automated verification so CS can validate eligibility instantly.",
-      "Database terpusat dan antarmuka web yang mengintegrasikan data Kemendikbud dan Dukcapil, dengan verifikasi otomatis agar CS dapat memvalidasi kelayakan seketika.",
+      "Kemendikbud and Dukcapil supplied the data, and Telkomsel's IT team filtered it down to eligible Telkomsel customers. From there, I built an Oracle database and a cron job that loads the filtered data automatically every hour. Then I added a new menu to a web application that customer service already used: the agent types a customer's phone number and the result appears. If the number isn't on the list, the agent escalates to IT so the customer can be added. The free quota program has since ended, and as far as I know the tool is no longer used.",
+      "Kemendikbud dan Dukcapil menyediakan datanya, dan tim IT Telkomsel menyaringnya menjadi pelanggan Telkomsel yang berhak. Dari situ saya membuat database Oracle dan cron job yang memuat data hasil saringan secara otomatis setiap jam. Lalu saya menambahkan menu baru pada aplikasi web yang sudah biasa dipakai customer service: agen mengetik nomor telepon pelanggan dan hasilnya langsung muncul. Jika nomor tidak ada di daftar, agen mengeskalasi ke tim IT agar pelanggan itu bisa ditambahkan. Program kuota gratis ini sudah berakhir, dan sejauh yang saya tahu alat ini tidak lagi dipakai."
     ),
-    results: [],
-    features: [],
-    tech: ["Full-Stack PHP", "Oracle Database"],
-    domain: ["Telecommunication", "Education"],
+    results: [
+      { value: t("2 sources", "2 sumber"), label: t("of government data (Kemendikbud and Dukcapil), filtered by Telkomsel IT and loaded automatically", "data pemerintah (Kemendikbud dan Dukcapil), disaring tim IT Telkomsel dan dimuat otomatis") },
+      { value: t("Hourly", "Tiap jam"), label: t("automatic load into the Oracle database", "pemuatan otomatis ke database Oracle") },
+      { value: t("1 number", "1 nomor"), label: t("is all an agent types to check a customer", "itu saja yang diketik agen untuk memeriksa pelanggan") }
+    ],
+    flow: [
+      t("Kemendikbud and Dukcapil send lists of schools, students and teachers.", "Kemendikbud dan Dukcapil mengirim daftar sekolah, siswa, dan guru."),
+      t("Telkomsel's IT team keeps only Telkomsel customers and works out who qualifies for the free quota.", "Tim IT Telkomsel hanya menyisakan pelanggan Telkomsel dan menentukan siapa yang berhak atas kuota gratis."),
+      t("A cron job I built loads the filtered data into an Oracle database every hour.", "Cron job buatan saya memuat data hasil saringan ke database Oracle setiap jam."),
+      t("When a customer says they never got the quota, a customer service agent types the phone number into a new menu in the web application they already use.", "Saat pelanggan mengaku belum menerima kuota, agen customer service mengetik nomor teleponnya di menu baru pada aplikasi web yang sudah biasa mereka pakai."),
+      t("The menu shows whether the number is on the list. If it isn't, the agent escalates to IT so the customer can be added.", "Menu menampilkan apakah nomor itu ada di daftar. Jika tidak, agen mengeskalasi ke tim IT agar pelanggan bisa ditambahkan.")
+    ],
+    features: [
+      t("Automatic hourly loading of filtered data into an Oracle database", "Pemuatan otomatis data hasil saringan ke database Oracle setiap jam"),
+      t("A lookup menu inside a web application that agents already knew", "Menu pencarian di dalam aplikasi web yang sudah dikenal agen"),
+      t("Phone numbers accepted starting with 0 or with 62", "Nomor telepon diterima dengan awalan 0 maupun 62"),
+      t("A clear next step when a number is not found", "Langkah lanjutan yang jelas bila nomor tidak ditemukan")
+    ],
+    decisions: [
+      { title: t("A menu in a tool agents already used", "Menu di alat yang sudah dipakai agen"),
+        why: t("Agents didn't have to learn or switch to another application.", "Agen tidak perlu mempelajari atau berpindah ke aplikasi lain.") },
+      { title: t("Look up by phone number, not by query", "Cari dengan nomor telepon, bukan query"),
+        why: t("Anyone on the customer service team can answer a customer in moments, without technical skills.", "Siapa pun di tim customer service bisa menjawab pelanggan dengan cepat, tanpa keahlian teknis.") },
+      { title: t("Only filtered data enters the database", "Hanya data hasil saringan yang masuk ke database"),
+        why: t("The IT team filters the government data first, so the database only holds the Telkomsel customers who matter for this program.", "Tim IT menyaring data pemerintah lebih dulu, jadi database hanya berisi pelanggan Telkomsel yang relevan untuk program ini.") },
+      { title: t("Load every hour", "Pemuatan tiap jam"),
+        why: t("The data is large and loading time varied. An hour was a safe window for a load to finish completely.", "Datanya besar dan waktu pemuatan tidak menentu. Satu jam adalah jendela yang aman agar pemuatan selesai tuntas.") },
+      { title: t("Not found means escalate", "Tidak ditemukan berarti eskalasi"),
+        why: t("If a number isn't on the list, the agent has a clear next step: escalate to IT so the customer can be added.", "Jika nomor tidak ada di daftar, agen punya langkah yang jelas: eskalasi ke tim IT agar pelanggan bisa ditambahkan.") }
+    ],
+    challenges: [
+      t("Making sure the load really finishes, into the right tables. The data was large and loading time was unpredictable. The cron job had to run to the end without errors in its log and fill the correct tables, so I chose an hourly schedule with a safe margin and checked the logs.",
+        "Memastikan pemuatan benar-benar selesai, ke tabel yang tepat. Datanya besar dan waktu pemuatan tidak menentu. Cron job harus berjalan sampai akhir tanpa error di lognya dan mengisi tabel yang benar, jadi saya memilih jadwal tiap jam dengan batas aman dan memeriksa lognya."),
+      t("Phone numbers typed in different ways. Agents typed the number as 0812... or as 62812..., depending on habit, so I made the lookup give the same answer for both.",
+        "Nomor telepon yang diketik dengan cara berbeda. Agen mengetik nomor sebagai 0812... atau 62812... sesuai kebiasaan, jadi saya membuat pencarian memberi jawaban yang sama untuk keduanya.")
+    ],
+    usecases: [
+      t("Customer support eligibility checks", "Pemeriksaan kelayakan di customer support"), t("Membership and loyalty lookups", "Pencarian keanggotaan dan loyalty"),
+      t("Subsidy programs", "Program subsidi"), t("Scheduled data imports from partners", "Impor data terjadwal dari mitra")
+    ],
+    tech: ["PHP", "Oracle Database", "Cron job"],
+    domain: ["Telecommunications", "Education"],
     gallery: [],
-    note: t(
-      "Internal system, described at process level. Names, data and screenshots are anonymized.",
-      "Sistem internal, dijelaskan pada tingkat proses. Nama, data, dan screenshot disamarkan.",
-    ),
-    flow: [],
-    decisions: [],
-    usecases: [],
-    links: {
-      study: "https://github.com/brillyarma/project-showcase/tree/main/mbjj/",
-      demo: "",
-      repo: "",
-      video: "",
-    },
-    challenges: [],
+    note: t("Internal Telkomsel system, described at process level. No data, screenshots or system details are shown.", "Sistem internal Telkomsel, dijelaskan pada tingkat proses. Tidak ada data, screenshot, atau detail sistem yang ditampilkan."),
+    links: { study: "https://github.com/brillyarma/project-showcase/tree/main/mbjj/", demo: "", repo: "", video: "" }
   },
   {
     id: "ekskul-widuri",
