@@ -66,7 +66,7 @@ $(function () {
         "Chatbot AI WhatsApp yang cerdas dan responsif untuk menjawab pertanyaan dan memproses booking studio musik. Menghemat Rp120.000/bulan dan 89% lebih efisien.",
         "Merancang lingkungan LLM privat dengan server inferensi aman untuk solusi AI internal.",
         "Menyusun 4+ Business Requirement Document (BRD) untuk pengembangan dashboard dan alat internal.",
-        "Mengembangkan sistem data daring untuk mengelola autentikasi siswa, guru, dan orang tua selama pandemi COVID-19.",
+        "Mengembangkan sistem data online untuk memeriksa apakah siswa, guru, dan dosen sudah terdaftar sebagai penerima kuota internet gratis selama pandemi COVID-19.",
         "Mengembangkan sistem pelaporan terpusat untuk GraPARI dengan menyatukan data manual dari berbagai area ke dalam satu database terintegrasi.",
         "Menyederhanakan administrasi ekstrakurikuler sekolah dengan mendigitalkan proses manual menjadi platform yang lebih tertata dan mudah diakses semua pengguna."
       ];
