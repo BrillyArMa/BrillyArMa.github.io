@@ -323,44 +323,76 @@ window.PROJECTS = [
     challenges: [],
   },
   {
-    id: "business-solution-analysis",
+    id: "business-solution-analysis-data-strategy",
     type: "code",
     image: "assets/img/executive-interaction-date-filter.png",
     title: "Business Solution Analysis & Data Strategy",
     role: t("Technical Liaison", "Technical Liaison"),
     period: "2020-2022 · Telkomsel",
     summary: t(
-      "Turned business needs from Sales teams into clear technical requirements for IT.",
-      "Menerjemahkan kebutuhan bisnis tim Sales menjadi kebutuhan teknis yang jelas untuk IT.",
+      "I sat between business users and Telkomsel's IT team: I listened to the problem, turned it into wireframes and business requirement documents, and followed the work through to production.",
+      "Saya berada di antara pengguna bisnis dan tim IT Telkomsel: mendengarkan masalahnya, menuangkannya ke wireframe dan dokumen kebutuhan bisnis, lalu mengawal pekerjaannya sampai produksi."
     ),
     problem: t(
-      "Sales and Escalation teams had needs that IT could not act on without clear requirements.",
-      "Tim Sales dan Escalation memiliki kebutuhan yang tidak bisa dikerjakan IT tanpa kebutuhan yang jelas.",
+      "Business users know their problem but not the technology. The IT team knows the technology but not the business process. Requests got lost in the gap. In one case, a team had to download data from a slow database that sometimes dropped the session, then write long queries where a typo in a date or category could give wrong results, and then rebuild the same charts again and again.",
+      "Pengguna bisnis paham masalahnya tetapi bukan teknologinya. Tim IT paham teknologinya tetapi bukan proses bisnisnya. Permintaan sering hilang di celah itu. Pada satu kasus, sebuah tim harus mengunduh data dari database yang lambat dan kadang memutus sesi, lalu menulis query panjang yang rawan salah ketik pada kondisi tanggal atau kategori, kemudian membuat ulang grafik yang sama berkali-kali."
     ),
     solution: t(
-      "Wrote 4+ Business Requirement Documents for dashboards and internal tools, and managed a high-priority Big Data migration requested by the General Manager of Sales.",
-      "Menyusun 4+ Business Requirement Document untuk dashboard dan internal tools, serta mengelola migrasi Big Data prioritas tinggi atas permintaan General Manager Sales.",
+      "As technical liaison, I was the person in the middle. I met the business user, sketched a solution as a wireframe and agreed it with them, then discussed it with the IT team in technical terms and wrote the BRD for review. While IT built it, I followed up on progress and tested the result against the request. For the example above, I proposed a dashboard built in Tableau, where the team can filter the data and download it themselves. I also mapped the databases for a migration from Oracle to Hadoop.",
+      "Sebagai technical liaison, saya adalah orang di tengah. Saya bertemu pengguna bisnis, menggambar solusi sebagai wireframe dan menyepakatinya dengan mereka, lalu membahasnya dengan tim IT dalam bahasa teknis dan menulis BRD untuk direview. Selama IT membangun, saya menindaklanjuti progres dan menguji hasilnya terhadap permintaan. Untuk contoh di atas, saya mengusulkan dashboard di Tableau agar tim bisa menyaring dan mengunduh data sendiri. Saya juga memetakan database untuk migrasi dari Oracle ke Hadoop."
     ),
-    results: [{ value: "4+", label: t("BRDs delivered", "BRD diselesaikan") }],
-    features: [],
-    tech: ["Balsamiq Wireframe", "Hadoop", "Tableau"],
-    domain: ["Business Analysis"],
-    gallery: [],
-    note: t(
-      "Internal system, described at process level. Names, data and screenshots are anonymized.",
-      "Sistem internal, dijelaskan pada tingkat proses. Nama, data, dan screenshot disamarkan.",
-    ),
-    flow: [],
-    decisions: [],
-    usecases: [],
-    links: {
-      study:
-        "https://github.com/brillyarma/project-showcase/tree/main/business-solution-analysis/",
-      demo: "",
-      repo: "",
-      video: "",
-    },
-    challenges: [],
+    results: [
+      { value: "4+", label: t("business requirement documents (BRDs) for dashboards and internal tools", "dokumen kebutuhan bisnis (BRD) untuk dashboard dan alat internal") },
+      { value: t("~5 days", "~5 hari"), label: t("estimated for moving the active Oracle databases to Hadoop", "estimasi untuk memindahkan database Oracle yang masih aktif ke Hadoop") },
+      { value: t("Faster", "Lebih cepat"), label: t("analysis, according to the business users who used the dashboards", "analisis, menurut pengguna bisnis yang memakai dashboard") }
+    ],
+    flow: [
+      t("I meet the business user, listen to the problem and offer suggestions. No time estimate yet.", "Saya bertemu pengguna bisnis, mendengarkan masalahnya, dan menawarkan saran. Belum ada estimasi waktu."),
+      t("In the same week I draw a wireframe and go back to confirm it matches what they want.", "Pada minggu yang sama saya membuat wireframe dan kembali untuk memastikan sudah sesuai keinginan mereka."),
+      t("Once they agree, I give them a time estimate.", "Setelah mereka setuju, saya memberi estimasi waktu."),
+      t("I discuss the same topic with the IT team in technical terms, then write the BRD for review by a GM and a VP.", "Saya membahas topik yang sama dengan tim IT dalam bahasa teknis, lalu menulis BRD untuk direview GM dan VP."),
+      t("IT builds it. I follow up on progress and test it against the request.", "IT membangunnya. Saya menindaklanjuti progres dan mengujinya terhadap permintaan."),
+      t("It is handed to the business users. Errors get fixed, and new ideas become new requests.", "Hasilnya diserahkan ke pengguna bisnis. Error diperbaiki, dan ide baru menjadi permintaan baru.")
+    ],
+    features: [
+      t("BRDs for dashboards and internal tools", "BRD untuk dashboard dan alat internal"),
+      t("Presentations and wireframes in plain language", "Presentasi dan wireframe dengan bahasa yang mudah dipahami"),
+      t("Technical notes for IT: which tables to use and when data-transfer jobs run", "Catatan teknis untuk IT: tabel yang dipakai dan jadwal job transfer data"),
+      t("Follow-up, monitoring and testing while IT builds", "Tindak lanjut, pemantauan, dan pengujian selama IT membangun"),
+      t("A map of the active databases for the Oracle to Hadoop migration", "Pemetaan database yang masih aktif untuk migrasi Oracle ke Hadoop")
+    ],
+    decisions: [
+      { title: t("A wireframe in the same week", "Wireframe pada minggu yang sama"),
+        why: t("People react best to something they can see. Agreeing on a picture first means IT's time isn't spent on the wrong thing.", "Orang paling mudah memberi tanggapan pada sesuatu yang bisa dilihat. Menyepakati gambar lebih dulu membuat waktu IT tidak terbuang untuk hal yang salah.") },
+      { title: t("Two conversations, two languages", "Dua percakapan, dua bahasa"),
+        why: t("Business users hear plain language. The IT team hears the technical details, such as which tables to use and when data-transfer jobs run.", "Pengguna bisnis mendengar bahasa yang sederhana. Tim IT mendengar detail teknis, seperti tabel yang dipakai dan jadwal job transfer data.") },
+      { title: t("No time estimate until the solution is agreed", "Tidak ada estimasi waktu sebelum solusinya disepakati"),
+        why: t("Once the business user approves the wireframe, I give them an estimate, so the number is about the right solution.", "Setelah pengguna bisnis menyetujui wireframe, saya memberi estimasi, sehingga angkanya benar-benar untuk solusi yang tepat.") },
+      { title: t("Honest about technical limits", "Jujur soal batasan teknis"),
+        why: t("When a technical problem comes up, I explain it plainly to the business user and bring a solution or an alternative they can accept.", "Saat ada kendala teknis, saya menjelaskannya dengan bahasa sederhana kepada pengguna bisnis dan membawa solusi atau alternatif yang bisa mereka terima.") },
+      { title: t("Flexible about the tool", "Fleksibel soal alatnya"),
+        why: t("A dashboard could be built in Tableau or as a website. I suggest what fits, and follow what IT and the business user decide.", "Dashboard bisa dibuat di Tableau atau sebagai website. Saya menyarankan yang cocok, dan mengikuti keputusan IT dan pengguna bisnis.") }
+    ],
+    challenges: [
+      t("Changes while it's being built. A business user would sometimes want to remove or add a feature while IT was already working. If the work was more than 80% done, I asked the user to let it finish as planned and prepared a new BRD for the changes. I also asked IT to finish about three days early: two days for them, one day for me to test.",
+        "Perubahan di tengah pengerjaan. Pengguna bisnis kadang ingin menghapus atau menambah fitur saat IT sudah mengerjakan. Jika pekerjaan sudah lebih dari 80%, saya meminta pengguna menyelesaikannya sesuai rencana awal dan menyiapkan BRD baru untuk perubahannya. Saya juga meminta IT selesai sekitar tiga hari lebih cepat: dua hari untuk mereka, satu hari untuk saya menguji."),
+      t("Saying what can't be done. When a request couldn't be built the way it was asked, I explained it honestly in non-technical language, with a solution or suggestion the business user could accept.",
+        "Menyampaikan apa yang tidak bisa dikerjakan. Saat sebuah permintaan tidak bisa dibuat seperti yang diminta, saya menjelaskannya dengan jujur dalam bahasa non-teknis, disertai solusi atau saran yang bisa diterima pengguna bisnis.")
+    ],
+    usecases: [
+      t("Dashboards and reporting projects", "Proyek dashboard dan pelaporan"), t("Internal tools", "Alat internal"),
+      t("Data migrations", "Migrasi data"), t("Teams where business and IT need a translator", "Tim yang membutuhkan penerjemah antara bisnis dan IT")
+    ],
+    tech: ["Balsamiq Wireframe", "Tableau", "Hadoop", "Oracle Database"],
+    domain: ["Telecommunications", "Business Analysis"],
+    gallery: [
+      { src: "assets/img/bsa-1-executive.png", caption: t("Wireframe: an executive summary dashboard with a date range filter", "Wireframe: dashboard ringkasan eksekutif dengan filter rentang waktu") },
+      { src: "assets/img/bsa-2-repository.png", caption: t("Wireframe: filter the data, then view it or download it as Excel or CSV", "Wireframe: saring data, lalu lihat atau unduh sebagai Excel atau CSV") },
+      { src: "assets/img/bsa-3-service-va.png", caption: t("Wireframe: top intents and sessions of a virtual assistant, by channel", "Wireframe: intent dan sesi teratas sebuah virtual assistant, per kanal") },
+      { src: "assets/img/bsa-4-postpaid.png", caption: t("Wireframe: a postpaid consumer dashboard with filters, monthly targets and revenue target against achievement", "Wireframe: dashboard konsumen pascabayar dengan filter, target bulanan, serta target dan capaian pendapatan") }
+    ],
+    note: t("Internal Telkomsel work, described at process level. No BRD content, metrics or system details are shown.", "Pekerjaan internal Telkomsel, dijelaskan pada tingkat proses. Tidak ada isi BRD, metrik, atau detail sistem yang ditampilkan."),
+    links: { study: "https://github.com/brillyarma/project-showcase/tree/main/business-solution-analysis/", demo: "", repo: "", video: "" }
   },
   {
     id: "mbjj",
