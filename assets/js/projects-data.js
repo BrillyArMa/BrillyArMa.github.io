@@ -386,10 +386,10 @@ window.PROJECTS = [
     tech: ["Balsamiq Wireframe", "Tableau", "Hadoop", "Oracle Database"],
     domain: ["Telecommunications", "Business Analysis"],
     gallery: [
-      { src: "assets/img/bsa-1-executive.png", caption: t("Wireframe: an executive summary dashboard with a date range filter", "Wireframe: dashboard ringkasan eksekutif dengan filter rentang waktu") },
-      { src: "assets/img/bsa-2-repository.png", caption: t("Wireframe: filter the data, then view it or download it as Excel or CSV", "Wireframe: saring data, lalu lihat atau unduh sebagai Excel atau CSV") },
-      { src: "assets/img/bsa-3-service-va.png", caption: t("Wireframe: top intents and sessions of a virtual assistant, by channel", "Wireframe: intent dan sesi teratas sebuah virtual assistant, per kanal") },
-      { src: "assets/img/bsa-4-postpaid.png", caption: t("Wireframe: a postpaid consumer dashboard with filters, monthly targets and revenue target against achievement", "Wireframe: dashboard konsumen pascabayar dengan filter, target bulanan, serta target dan capaian pendapatan") }
+      { src: "assets/img/project/business-solution-analysis-data-strategy/bsa-1-executive.png", caption: t("Wireframe: an executive summary dashboard with a date range filter", "Wireframe: dashboard ringkasan eksekutif dengan filter rentang waktu") },
+      { src: "assets/img/project/business-solution-analysis-data-strategy/bsa-2-postpaid.png", caption: t("Wireframe: a postpaid consumer dashboard with filters, monthly targets and revenue target against achievement", "Wireframe: dashboard konsumen pascabayar dengan filter, target bulanan, serta target dan capaian pendapatan") },
+      { src: "assets/img/project/business-solution-analysis-data-strategy/bsa-3-service-va.png", caption: t("Wireframe: top intents and sessions of a virtual assistant, by channel", "Wireframe: intent dan sesi teratas sebuah virtual assistant, per kanal") },
+      { src: "assets/img/project/business-solution-analysis-data-strategy/bsa-4-repository.png", caption: t("Wireframe: filter the data, then view it or download it as Excel or CSV", "Wireframe: saring data, lalu lihat atau unduh sebagai Excel atau CSV") } 
     ],
     note: t("Internal Telkomsel work, described at process level. No BRD content, metrics or system details are shown.", "Pekerjaan internal Telkomsel, dijelaskan pada tingkat proses. Tidak ada isi BRD, metrik, atau detail sistem yang ditampilkan."),
     links: { study: "https://github.com/brillyarma/project-showcase/tree/main/business-solution-analysis/", demo: "", repo: "", video: "" }
